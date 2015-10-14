@@ -21,6 +21,10 @@ wss.on("connection", function(ws) {
 
   console.log("websocket connection open")
 
+  ws.on('message', function (data) { 
+  	console.log("got " + data);
+  })
+
   ws.on("close", function() {
     console.log("websocket connection close")
     clearInterval(id)
